@@ -1,5 +1,5 @@
 <template>
-    <b-container class="my-5">
+    <b-container>
         <b-row>
             <b-col>
                 <b-img src="http://via.placeholder.com/620x620" />

@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="md" fixed variant="light">
+    <b-navbar toggleable="md" fixed variant="light" class="py-4">
         <b-container>
             <b-navbar-toggle target="navbarNav"></b-navbar-toggle>
             <b-navbar-brand class="navbar-brand" :to="{ name: 'index' }">Navbar</b-navbar-brand>

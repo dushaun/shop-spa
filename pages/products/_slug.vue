@@ -12,7 +12,7 @@
                     </p>
                     <hr>
                     <b-badge variant="secondary">
-                        Product price
+                        {{ product.price }}
                     </b-badge>
                 </b-card>
             </b-col>

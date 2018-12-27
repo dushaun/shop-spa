@@ -18,7 +18,7 @@
             </b-media>
             <hr>
             <b-badge variant="secondary">
-                Product price
+                {{ product.price }}
             </b-badge>
         </b-card-body>
     </b-card>

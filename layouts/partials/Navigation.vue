@@ -6,7 +6,7 @@
             <b-collapse is-nav id="navbarNav">
                 <b-navbar-nav class="navbar-nav mr-auto">
                     <template v-for="category in categories">
-                        <template v-if="category.children.data.length">
+                        <template v-if="category.children.length">
                             <b-nav-item-dropdown
                                 :text="category.name"
                                 :key="category.slug"
@@ -18,7 +18,7 @@
                                 </b-dropdown-item>
                                 <b-dropdown-divider></b-dropdown-divider>
                                 <b-dropdown-item
-                                    v-for="child in category.children.data"
+                                    v-for="child in category.children"
                                     :to="{ name: 'categories-slug', params: { slug: child.slug }}"
                                     :key="child.slug"
                                 >

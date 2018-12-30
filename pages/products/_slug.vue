@@ -21,7 +21,22 @@
                             :type="type"
                             :variations="variations"
                             :key="type"
+                            v-model="form.variation"
                         />
+
+                        <b-row v-if="form.variation">
+                            <b-col cols="6">
+                                <b-input-group>
+                                    <b-form-select size="sm">
+                                        <option value="">1</option>
+                                    </b-form-select>
+
+                                    <b-input-group-append>
+                                        <b-btn variant="secondary" size="sm">Add to Cart</b-btn>
+                                    </b-input-group-append>
+                                </b-input-group>
+                            </b-col>
+                        </b-row>
                     </b-form>
                 </b-card>
             </b-col>
@@ -35,7 +50,11 @@
     export default {
         data () {
             return {
-                product: null
+                product: null,
+                form: {
+                    variation: null,
+                    quantity: 1
+                }
             }
         },
 

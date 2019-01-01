@@ -11,8 +11,18 @@
                         {{ product.description }}
                     </p>
                     <hr>
-                    <b-badge variant="secondary">
+                    <b-badge pill
+                         variant="secondary"
+                         :disabled="!product.in_stock"
+                    >
                         {{ product.price }}
+                    </b-badge>
+
+                    <b-badge pill
+                         variant="dark"
+                         v-if="!product.in_stock"
+                    >
+                        Out of Stock
                     </b-badge>
                     <hr>
                     <b-form>
@@ -28,8 +38,11 @@
                             <b-col cols="6">
                                 <b-input-group>
                                     <b-form-select size="sm"
-                                        :value="quantity.selected">
-                                        <option value="">1</option>
+                                        v-model="form.quantity"
+                                    >
+                                        <option :value="x" v-for="x in parseInt(form.variation.stock_count)" :key="x">
+                                            {{ x }}
+                                        </option>
                                     </b-form-select>
 
                                     <b-input-group-append>
@@ -59,6 +72,12 @@
                 quantity: {
                     selected: ''
                 }
+            }
+        },
+
+        watch: {
+            'form.variation' () {
+                this.form.quantity = 1
             }
         },
 

@@ -27,7 +27,8 @@
                         <b-row v-if="form.variation">
                             <b-col cols="6">
                                 <b-input-group>
-                                    <b-form-select size="sm">
+                                    <b-form-select size="sm"
+                                        :value="quantity.selected">
                                         <option value="">1</option>
                                     </b-form-select>
 
@@ -54,6 +55,9 @@
                 form: {
                     variation: null,
                     quantity: 1
+                },
+                quantity: {
+                    selected: ''
                 }
             }
         },

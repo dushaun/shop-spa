@@ -38,7 +38,23 @@
                     </template>
                 </b-navbar-nav>
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item>Sign in</b-nav-item>
+                    <template v-if="!$auth.loggedIn">
+                        <b-nav-item :to="{ name: 'auth-signin' }">
+                            Sign in
+                        </b-nav-item>
+                    </template>
+
+                    <template v-else>
+                        <b-nav-item href="#">
+                            {{ $auth.user.name }}
+                        </b-nav-item>
+                        <b-nav-item href="#">
+                            Orders
+                        </b-nav-item>
+                        <b-nav-item href="#">
+                            Cart (0)
+                        </b-nav-item>
+                    </template>
                 </b-navbar-nav>
             </b-collapse>
         </b-container>

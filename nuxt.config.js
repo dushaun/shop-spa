@@ -37,12 +37,33 @@ module.exports = {
   },
 
   modules: [
-      'bootstrap-vue/nuxt',
-      '@nuxtjs/axios'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
 
   axios: {
-    baseURL: 'http://shop-api.test/api'
+      baseURL: 'http://shop-api.test/api'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: 'meta.token'
+          },
+          logout: false,
+          user: {
+            url: '/auth/me',
+            method: 'get',
+            propertyName: 'data'
+          }
+        }
+      }
+    }
   },
 
   css: [

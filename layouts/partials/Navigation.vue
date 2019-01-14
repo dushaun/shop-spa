@@ -51,7 +51,7 @@
                         <b-nav-item href="#">
                             Orders
                         </b-nav-item>
-                        <b-nav-item href="#">
+                        <b-nav-item :to="{ name: 'cart' }">
                             Cart ({{ cartCount }})
                         </b-nav-item>
                     </template>

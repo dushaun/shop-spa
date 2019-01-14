@@ -3,7 +3,6 @@
         <b-row class="justify-content-md-center">
             <b-col cols="9">
                 <b-card title="Your Cart">
-                    <!--<h3>Your Cart</h3>-->
                     <br>
                     <CartOverview/>
                     <b-form>

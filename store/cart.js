@@ -25,5 +25,11 @@ export const actions = {
         commit('SET_PRODUCTS', response.data.products)
 
         return response
+    },
+
+    async destroy ({ dispatch }, productId) {
+        await this.$axios.$delete(`cart/${productId}`)
+
+        dispatch('getCart')
     }
 }

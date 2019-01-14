@@ -1,6 +1,4 @@
 <template>
-    <!--<b-table striped hover></b-table>-->
-
     <table class="table table-borderless table-hover">
         <tbody>
             <CartOverviewProduct
@@ -10,14 +8,6 @@
             />
         </tbody>
     </table>
-
-    <!--<b-card title="Card Title"-->
-            <!--class="mb-4">-->
-        <!--<p class="card-text">-->
-            <!--Some quick example text to build on the card title and make up the bulk of the card's content.-->
-        <!--</p>-->
-        <!--<b-button href="#" variant="primary">Something</b-button>-->
-    <!--</b-card>-->
 </template>
 
 <script>

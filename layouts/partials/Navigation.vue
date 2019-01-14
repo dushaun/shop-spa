@@ -52,7 +52,7 @@
                             Orders
                         </b-nav-item>
                         <b-nav-item href="#">
-                            Cart (0)
+                            Cart ({{ cartCount }})
                         </b-nav-item>
                     </template>
                 </b-navbar-nav>
@@ -67,7 +67,8 @@
     export default {
         computed: {
             ...mapGetters({
-                categories: 'categories'
+                categories: 'categories',
+                cartCount: 'cart/count'
             })
         }
     }
